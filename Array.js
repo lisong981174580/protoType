@@ -78,7 +78,6 @@ Array.prototype.reduce=function(fn,initialValue,context){
   }
   return total;
 }
-
 //concat
 Array.prototype.concat=function(){
   let newArr=[];
