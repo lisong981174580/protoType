@@ -134,3 +134,39 @@ Array.prototype.shift=function(){
   return item
 }
 
+//slice
+Array.prototype.slice=function(start,end){
+  let newArr=[];
+  if(!end){
+     if(start>=0){
+       for(let i=start;i<this.length;i++){
+        newArr.push(this[i])
+       }
+     } else{
+      for(let i=this.length+start;i<this.length;i++){
+        newArr.push(this[i])
+       }
+     }
+  } else{
+    if(start>=0&&end>=0){
+      for(let i=start;i<end&&i<this.length;i++){
+        newArr.push(this[i])
+      }
+    } else if(start>=0&&end<0){
+      for(let i=start;i<this.length+end&&i>=0;i++){
+        newArr.push(this[i])
+      }
+    } else if(start<0&&end>=0){
+      for(let i=this.length+start;i<end&&i<this.length;i++){
+        newArr.push(this[i])
+      }
+    } else{
+      for(let i=this.length+start;i<this.length+end&&i>0;i++){
+        newArr.push(this[i])
+      }
+    }
+  }
+  return newArr
+}
+
+
